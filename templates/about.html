@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1>About</h1>
+    {% comment %} Capitalize and cut {% endcomment %}
+    <h3>{{ title|capfirst|cut:"us" }}</h3>
+
+    <p>
+        {{my_text}}, {{my_number}}
+    </p>
+    {% comment %} Run throug list {% endcomment %}
+    {% for my_sub_item in my_list%}
+        {% if my_sub_item == 123%}
+            <li>
+                {{ forloop.counter }} - {{my_sub_item}} - if
+            </li>
+        {% elif my_sub_item == 'abc'%}
+            <li>
+                {{ forloop.counter }} - {{my_sub_item}} - elif
+            </li>
+        {% else %}
+            <li>
+                {{ forloop.counter }} - {{my_sub_item}} - else
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% for object in object_list %}
+    <p> {{object.id}}  - <a href='{{object.get_absolute_url}}'> Cliente: {{object.customer.name}} </a>
+    </p>
+
+{% endfor %}
+
+{% endblock %}

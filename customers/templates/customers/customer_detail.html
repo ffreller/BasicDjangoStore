@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1> {{object.name}} </h1>
+<p> Idade: {{object.age}} </p>
+<p> Email: {{object.email}} </p>
+{% if object.about_me != None and object.about_me != '' %}
+    Descrição: {{ object.about_me }}
+{% else %}
+    About me: Não informado
+
+{%endif%}
+{% endblock %}

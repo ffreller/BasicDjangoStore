@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1> Order: {{object.id}} </h1>
+<h2> Customer name: {{object.customer.name}} </h2>
+<h2> Products: </h2>
+{% for product in  object.products.all %}
+    <p> {{product.id}}  - <a href='{{product.get_absolute_url}}'> {{product.title}} </a>
+    </p>
+{% endfor %}
+{% endblock %}
